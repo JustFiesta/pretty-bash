@@ -4,14 +4,16 @@
 # If there is any problem with YCM install it via ~/.vim/plugged/YouCompleteMe/install.py
 
 # Make a tmp folder for download files
+echo ""
 echo "Creating /tmp/Pretty-Bash-tmp/ folder for download files"
 mkdir /tmp/Pretty-Bash-tmp/ && cd /tmp/Pretty-Bash-tmp/
 
 # Download needed config files
 
-echo ""
 echo "---------------------------------------------"
+echo ""
 echo "Using wget to download .bashrc arhive..."
+echo ""
 wget https://github.com/JustFiesta/Pretty-Bash/archive/main.zip
 
 if [ $? -eq 1 ]; then
@@ -22,6 +24,7 @@ fi
 
 echo ""
 echo "Unpacking zip file..."
+echo ""
 unzip main.zip
 
 if [ $? -eq 1 ]; then
@@ -45,8 +48,10 @@ echo "File succesfully installed! ($HOME/.bashrc)"
 echo ""
 
 echo "---------------------------------------------"
+echo ""
 echo "Using wget to download .vimrc zip arhive..."
-wget wget https://github.com/JustFiesta/Basic-vim/archive/master.zip
+echo ""
+wget https://github.com/JustFiesta/Basic-vim/archive/master.zip
 
 if [ $? -eq 1 ]; then
         echo "Could not wget .vimrc zip archive from GitHub."
@@ -55,6 +60,7 @@ fi
 
 echo ""
 echo "Unpacking zip file..."
+echo ""
 unzip master.zip
 
 if [ $? -eq 1 ]; then
@@ -65,6 +71,7 @@ fi
 
 echo ""
 echo "Installing new .bashrc..."
+echo ""
 cd Basic-vim-master/ && mv .vimrc ~/.vimrc
 
 if [ $? -eq 1 ]; then
@@ -74,7 +81,7 @@ if [ $? -eq 1 ]; then
 fi
 
 echo ""
-echo "File fetched! ($HOME/.vimrc)"
+echo "File succesfully installed! ($HOME/.vimrc)"
 
 echo ""
 echo "Removing tmp/Pretty-Bash-tmp/"
@@ -90,6 +97,7 @@ fi
 
 echo ""
 echo "---------------------------------------------"
+echo ""
 
 # Create folders
 echo "Creating .vim folder..."
@@ -105,7 +113,9 @@ fi
 # Download vim-plug
 echo ""
 echo "---------------------------------------------"
+echo ""
 echo "Using curl to download vim-plug (plugin manager)..."
+echo ""
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
@@ -114,6 +124,7 @@ if [ $? -eq 1 ]; then
         echo "Could not download vim-plug plugin manager."
         exit 1
 fi
+echo ""
 echo "vim-plug installed!"
 
 
@@ -135,11 +146,11 @@ echo "VIM plugins installed!"
 
 # Reload configfiles 
 echo "---------------------------------------------"
+echo ""
 echo "Reloading configuration files..."
 echo ""
 source $HOME/.bashrc
 echo ""
-echo "---------------------------------------------"
 source $HOME/.vimrc
 echo ""
 echo "---------------------------------------------"
