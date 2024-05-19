@@ -5,5 +5,6 @@ The setup script fetches this .bashrc file and .vimrc from Basic-vim repository 
 
 This is a great starter for new enviroments.
 
-NOTE: PlugInstall might not work in certain envrioments. Please proceed to install plugins manually inside VIM -> :PlugInstall  
-      YouCompleteMe server reqiures manual installation. Please check (their)[https://github.com/ycm-core/YouCompleteMe] repository for autocompletion in VIM.
+NOTES: 
+* PlugInstall might not work in certain envrioments. Please proceed to install plugins manually inside VIM -> :PlugInstall  
+* YouCompleteMe server reqiures manual installation. Please check (their)[https://github.com/ycm-core/YouCompleteMe] repository for autocompletion in VIM.
