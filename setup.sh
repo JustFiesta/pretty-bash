@@ -137,3 +137,5 @@ fi
 
 echo ""
 echo "VIM plugins installed!"
+echo "---------------------------------------------"
+echo ""
