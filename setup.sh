@@ -71,7 +71,7 @@ echo "File fetched! ($HOME/.vimrc)"
 
 echo ""
 echo "Removing tmp/Pretty-Bash-tmp/"
-rm /tmp/Pretty-Bash-tmp/
+rm -r /tmp/Pretty-Bash-tmp/
 
 if [ $? -eq 1 ]; then
 	echo "Could not remove tmp folder. Please proceed manually."
