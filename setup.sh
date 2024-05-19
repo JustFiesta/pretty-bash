@@ -117,11 +117,6 @@ fi
 echo "vim-plug installed!"
 
 
-# Reload configfiles 
-source $HOME/.bashrc
-source $HOME/.vimrc
-
-
 # Install VIM plugins
 
 echo ""
@@ -137,5 +132,14 @@ fi
 
 echo ""
 echo "VIM plugins installed!"
+
+# Reload configfiles 
 echo "---------------------------------------------"
+echo "Reloading configuration files..."
 echo ""
+source $HOME/.bashrc
+echo ""
+echo "---------------------------------------------"
+source $HOME/.vimrc
+echo ""
+echo "---------------------------------------------"
