@@ -3,27 +3,80 @@
 # This script reqiures: git, wget, curl, and YouCompleteMe dependencies
 # If there is any problem with YCM install it via ~/.vim/plugged/YouCompleteMe/install.py
 
+# Make a tmp folder for download files
+echo "Creating /tmp/Pretty-Bash-tmp/ folder for download files"
+mkdir /tmp/Pretty-Bash-tmp/ && cd /tmp/Pretty-Bash-tmp/
+
 # Download needed config files
 
-echo "Using wget to download .bashrc config file..."
-wget -P $HOME -O .bashrc https://raw.githubusercontent.com/JustFiesta/Pretty-Bash/main/.bashrc
+echo ""
+echo "Using wget to download .bashrc arhive..."
+wget https://github.com/JustFiesta/Pretty-Bash/archive/main.zip
 
 if [ $? -eq 1 ]; then
-	echo "Could not wget .bashrc from GitHub."
+	echo "Could not wget .bashrc arhive from GitHub."
 	exit 1
 fi
-echo "File fetched! ($HOME/.bashrc)"
 
-echo "---------------------------------------------"
-echo "Using wget to download .vimrc config file..."
-wget -P $HOME -O .vimrc https://raw.githubusercontent.com/JustFiesta/Basic-vim/master/.vimrc
+echo ""
+echo "Unpacking zip file..."
+unzip main.zip
 
 if [ $? -eq 1 ]; then
-        echo "Could not wget .vimrc from GitHub."
+	echo "Could not unzip main.zip arhive."
+	exit 1
+fi
+
+echo ""
+echo "Installing new .bashrc..."
+cd Pretty-Bash-main/ && mv .bashrc ~/.bashrc && cd ..
+
+if [ $? -eq 1 ]; then
+	echo "Could not move new .bashrc file into HOME directory."
+	exit 1
+fi
+
+echo ""
+echo "File succesfully installed! ($HOME/.bashrc)"
+
+echo "---------------------------------------------"
+echo "Using wget to download .vimrc zip arhive..."
+wget wget https://github.com/JustFiesta/Basic-vim/archive/master.zip
+
+if [ $? -eq 1 ]; then
+        echo "Could not wget .vimrc zip archive from GitHub."
         exit 1
 fi 
+
+echo ""
+echo "Unpacking zip file..."
+unzip master.zip
+
+if [ $? -eq 1 ]; then
+	echo "Could not unzip main.zip arhive."
+	exit 1
+fi
+
+echo ""
+echo "Installing new .bashrc..."
+cd Basic-vim-master/ && mv .vimrc ~/.vimrc
+
+if [ $? -eq 1 ]; then
+	echo "Could not move new .vimrc file into HOME directory."
+	exit 1
+fi
+
+echo ""
 echo "File fetched! ($HOME/.vimrc)"
 
+echo ""
+echo "Removing tmp/Pretty-Bash-tmp/"
+rm /tmp/Pretty-Bash-tmp/
+
+if [ $? -eq 1 ]; then
+	echo "Could not remove tmp folder. Please proceed manually."
+	exit 1
+fi
 
 # Download VIM plugin manager
 
@@ -36,6 +89,7 @@ if [ $? -eq 1 ]; then
         echo "Could not create .vim folder."
         exit 1
 fi
+
 
 # Download vim-plug
 
@@ -54,6 +108,7 @@ echo "vim-plug installed!"
 # Reload configfiles 
 source $HOME/.bashrc
 source $HOME/.vimrc
+
 
 # Install VIM plugins
 echo "---------------------------------------------"
