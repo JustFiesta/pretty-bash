@@ -14,6 +14,7 @@ if [ $? -eq 1 ]; then
 fi
 echo "File fetched! ($HOME/.bashrc)"
 
+echo "---------------------------------------------"
 echo "Using wget to download .vimrc config file..."
 wget -P $HOME -O .vimrc https://raw.githubusercontent.com/JustFiesta/Basic-vim/master/.vimrc
 
@@ -26,6 +27,7 @@ echo "File fetched! ($HOME/.vimrc)"
 
 # Download VIM plugin manager
 
+echo "---------------------------------------------"
 # Create folders
 echo "Creating .vim folder..."
 mkdir -p ~/.vim ~/.vim/autoload ~/.vim/backup ~/.vim/colors ~/.vim/plugged
@@ -36,6 +38,8 @@ if [ $? -eq 1 ]; then
 fi
 
 # Download vim-plug
+
+echo "---------------------------------------------"
 echo "Using curl to download vim-plug (plugin manager)..."
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -52,6 +56,7 @@ source $HOME/.bashrc
 source $HOME/.vimrc
 
 # Install VIM plugins
+echo "---------------------------------------------"
 echo "Installing VIM plugins..."
 vim +PlugInstall +qall
 
