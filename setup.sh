@@ -5,8 +5,8 @@
 
 # Make a tmp folder for download files
 echo ""
-echo "Creating /tmp/Pretty-Bash-tmp/ folder for download files"
-mkdir /tmp/Pretty-Bash-tmp/ && cd /tmp/Pretty-Bash-tmp/
+echo "Creating /tmp/pretty-bash-tmp/ folder for download files"
+mkdir /tmp/pretty-bash-tmp/ && cd /tmp/pretty-bash-tmp/
 
 # Download needed config files
 
@@ -14,7 +14,7 @@ echo "---------------------------------------------"
 echo ""
 echo "Using wget to download .bashrc arhive..."
 echo ""
-wget https://github.com/JustFiesta/Pretty-Bash/archive/main.zip
+wget https://github.com/JustFiesta/pretty-bash/archive/main.zip
 
 if [ $? -eq 1 ]; then
 	echo ""
@@ -35,7 +35,7 @@ fi
 
 echo ""
 echo "Installing new .bashrc..."
-cd Pretty-Bash-main/ && mv .bashrc ~/.bashrc && cd ..
+cd pretty-bash-main/ && mv .bashrc ~/.bashrc && cd ..
 
 if [ $? -eq 1 ]; then
 	echo ""
@@ -84,8 +84,8 @@ echo ""
 echo "File succesfully installed! ($HOME/.vimrc)"
 
 echo ""
-echo "Removing tmp/Pretty-Bash-tmp/"
-rm -r /tmp/Pretty-Bash-tmp/
+echo "Removing tmp/pretty-bash-tmp/"
+rm -r /tmp/pretty-bash-tmp/
 
 if [ $? -eq 1 ]; then
 	echo ""
