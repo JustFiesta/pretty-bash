@@ -152,7 +152,7 @@ if [ $? -eq 1 ]; then
 fi
 
 cd $HOME/.vim/plugged/YouCompleteMe
-
+python3 install.py
 
 echo ""
 echo "VIM plugins installed!"
