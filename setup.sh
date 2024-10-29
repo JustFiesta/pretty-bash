@@ -3,6 +3,16 @@
 # This script reqiures: git, wget, curl, and YouCompleteMe dependencies
 # If there is any problem with YCM install it via ~/.vim/plugged/YouCompleteMe/install.py
 
+# Check for YCM dependencies
+echo ""
+echo "Installing dependencies"
+sudo apt-get install python3 cmake zip
+if [ $? -eq 1 ]; then
+	echo ""
+	echo "Dependencies not installed. Proceed manualy"
+	exit 1
+fi
+
 # Make a tmp folder for download files
 echo ""
 echo "Creating /tmp/pretty-bash-tmp/ folder for download files"
@@ -140,6 +150,9 @@ if [ $? -eq 1 ]; then
 	echo "Error during plugin installation. Please install them manuanlly in vim using :PlugInstall"
         exit 1
 fi
+
+cd $HOME/.vim/plugged/YouCompleteMe
+
 
 echo ""
 echo "VIM plugins installed!"
