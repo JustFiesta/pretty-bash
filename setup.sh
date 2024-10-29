@@ -6,7 +6,7 @@
 # Check for YCM dependencies
 echo ""
 echo "Installing dependencies"
-sudo apt-get install python3 cmake zip
+apt install python3 cmake zip build-essential vim-nox python3-dev
 if [ $? -eq 1 ]; then
 	echo ""
 	echo "Dependencies not installed. Proceed manualy"
