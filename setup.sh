@@ -6,7 +6,7 @@
 # Check for YCM dependencies
 echo ""
 echo "Installing dependencies"
-apt install python3 cmake zip build-essential vim-nox python3-dev
+sudo apt install python3 cmake zip build-essential vim-nox python3-dev
 if [ $? -eq 1 ]; then
 	echo ""
 	echo "Dependencies not installed. Proceed manualy"
@@ -151,8 +151,16 @@ if [ $? -eq 1 ]; then
         exit 1
 fi
 
+echo ""
+echo "Compiling YouCompleteMe..."
 cd $HOME/.vim/plugged/YouCompleteMe
-python3 install.py
+python3 install.py --all
+
+if [ $? -eq 1 ]; then
+	echo ""
+	echo "Error during YCM compilation. Please install it manuanlly in $HOME/.vim/plugged/YouCompleteMe/install.py"
+        exit 1
+fi
 
 echo ""
 echo "VIM plugins installed!"
