@@ -51,7 +51,7 @@ echo "---------------------------------------------"
 echo ""
 echo "Using wget to download .vimrc zip arhive..."
 echo ""
-wget https://github.com/JustFiesta/Basic-vim/archive/master.zip
+wget https://github.com/JustFiesta/basic-vim/archive/master.zip
 
 if [ $? -eq 1 ]; then
         echo "Could not wget .vimrc zip archive from GitHub."
@@ -72,7 +72,7 @@ fi
 echo ""
 echo "Installing new .bashrc..."
 echo ""
-cd Basic-vim-master/ && mv .vimrc ~/.vimrc
+cd basic-vim-master/ && mv .vimrc ~/.vimrc
 
 if [ $? -eq 1 ]; then
 	echo ""
